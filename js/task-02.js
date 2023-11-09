@@ -7,12 +7,11 @@ const ingredients = [
   'Condiments',
 ];
 
-const list = document.getElementById('ingredients')
-const fragment = document.createDocumentFragment();
-ingredients.forEach(el => {
+const list = document.querySelector('#ingredients')
+const arr = ingredients.map(el => {
   let item = document.createElement('li');
   item.className = 'item'
   item.textContent = el
- fragment.appendChild(item)
+return item
 })
-list.appendChild(fragment);
+list.append(...arr);
